@@ -1,18 +1,23 @@
 #pragma once
 #include <functional>
 #include <unordered_map>
+#include <vector>
 
-template<class T, class ... Args>
-class function_hook
+template<typename Signature>
+class function_hook;
+
+template<class R, class ...Args>
+class function_hook<R(Args...)>
 {
 public:
-	function_hook(void* adr);
-	~function_hook();
-
 	void bind(std::function<void()> listener);
 
-private:
-	static T detour(Args... args);
-	std::unordered_map<std::function<void()>> listener_list;
-};
+	static R detour(Args... args);
 
+	static function_hook& getInstance(void* target);
+private:
+	function_hook();
+
+	static std::vector<std::function<void()>> listener_list;
+	static std::unordered_map<void*, function_hook> instances;
+};
