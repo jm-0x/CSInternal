@@ -1,7 +1,5 @@
 #include "function_hook.hpp"
 
-
-
 template <typename R, typename... Args>
 void function_hook<R(Args...)>::bind(std::function<void()> listener)
 {
@@ -36,6 +34,6 @@ function_hook<R(Args...)>& function_hook<R(Args...)>::getInstance(void* target)
 		return it->second;
 	}
 }
+template <typename Signature>
+std::unordered_map<void*, function_hook<Signature>> function_hook<Signature>::instances;
 
-template <typename R, typename... Args>
-std::unordered_map<void*, function_hook<R(Args...)>> function_hook<R(Args...)>::instances;
