@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_library(${PROJECT_NAME} STATIC "")
-target_sources(${PROJECT_NAME} PRIVATE "src/function_hook.cpp" "src/hook_group.cpp")
+target_sources(${PROJECT_NAME} PRIVATE  )
 
 target_include_directories(${PROJECT_NAME} PRIVATE 
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/${PROJECT_NAME}>
