@@ -2,6 +2,7 @@
 #include <hook_group.hpp>
 
 
+
 template<auto func>
 struct hook_handle
 {
