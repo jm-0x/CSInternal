@@ -1,7 +1,0 @@
-{
-    "name": "Architecture",
-    "version-string": "1.0",
-    "dependencies": [
-        "polyhook2"
-    ]
-}
