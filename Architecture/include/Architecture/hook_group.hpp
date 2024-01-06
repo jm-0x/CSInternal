@@ -2,7 +2,6 @@
 #include <vector>
 #include <functional>
 
-
 template<typename T>
 struct hook_group;
 
@@ -11,13 +10,14 @@ struct hook_group<R(Args...)>
 {
     using func_ptr_t = R(*)(Args...);
 
+
     template<func_ptr_t func>
     static R hook_function(Args...)
     {
         auto our_listeners = listeners.find(func);
         if (our_listeners != listeners.end())
         {
-            for (const auto& listener : our_liseners.second)
+            for (const auto& listener : our_listeners.second)
             {
                 listener();
             }

@@ -19,7 +19,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/>
 $<INSTALL_INTERFACE:include>)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE PolyHook_2::PolyHook_2)
+target_link_libraries(${PROJECT_NAME} PUBLIC PolyHook_2::PolyHook_2)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 20)
 set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD_REQUIRED ON)
